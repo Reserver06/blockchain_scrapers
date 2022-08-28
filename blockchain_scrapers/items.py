@@ -3,10 +3,16 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
-import scrapy
+from dataclasses import dataclass
 
 
-class BlockchainScrapersItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+@dataclass
+class CryptoslateItem:
+    url: str
+    title: str
+    sub_title: str
+    topic: str
+    author: str
+    author_socials: str
+    read_length: str
+    time_published: str
