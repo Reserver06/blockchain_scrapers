@@ -1,9 +1,10 @@
-import pickle
 import re
-from scrapy.spiders import SitemapSpider
-from ..items import CryptoslateItem
 from dataclasses import asdict
-from pathlib import Path
+
+from scrapy.spiders import SitemapSpider
+
+from ..items import CryptoslateItem
+from ..utils.stash_webpage import stash_webpage
 
 
 class CryptoslateSpider(SitemapSpider):
@@ -69,17 +70,3 @@ class CryptoslateSpider(SitemapSpider):
         item["time_published"] = " ".join([time.strip() for time in times]).strip()
 
         yield asdict(CryptoslateItem(**item))
-
-
-def stash_webpage(response):
-    raw_html = response.text
-    raw_url = response.url
-    url = raw_url.split(".com/")[1].replace("/", "")
-
-    item = {
-        "url": response.url,
-        "raw_html": raw_html,
-    }
-    path = Path.cwd().joinpath("blockchain_scrapers").joinpath("pickles")
-    with open(path.joinpath(f"{url}.pickle"), "wb+") as pf:
-        pickle.dump(item, pf)

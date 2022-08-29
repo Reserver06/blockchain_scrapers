@@ -16,3 +16,18 @@ class CryptoslateItem:
     author_socials: str
     read_length: str
     time_published: str
+
+
+@dataclass
+class GlyphSocialItem:
+    url: str
+    legal_name: str
+    category: str
+    headquarters: str
+    founding_year: str
+    founding_team: str
+    facebook: str
+    linkedin: str
+    twitter: str
+    website: str
+    description: str
