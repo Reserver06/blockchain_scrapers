@@ -33,3 +33,4 @@ In the project directory:
 - All output is sent to the terminal and stored in the mongoDB database. You can store the yielded items in a json file by adding `-o <file name>.json` at the end of the above commands.
 - A download delay of 3 seconds has been implemented for both scrapers so we don't overwhelm the sites we are scraping.
 - The scrapers were designed on Windows 11 and have not been tested on Linux based systems. However, they were writen with linux systems in mind so they should run fine on them.
+- Minimal data cleansing was needed in this project.
