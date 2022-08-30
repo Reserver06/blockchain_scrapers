@@ -1,6 +1,6 @@
 # **Blockchain Scrapers**
 ### Goal:
-The goal of this project is to scrape relevant information from 2 blockchain related websites. I have chosen to focus scraping article related data from www.cryptoslate.com and company record data from www.glyph.social. These websites contain a nice amount of clean blockchain related data so they are ideal candidates for scraping. I will use the Scrapy Python framework because it provides an easy way to scrape large amounts of data in a clean and comprehensible manner. The data will be stored in a MongoDB database because of its relatively effortless intergration with Scrapy. It is also a NoSQL database which is ideal for unstructured data.
+The goal of this project is to scrape relevant information from 2 blockchain related websites. I have chosen to extract article related data from www.cryptoslate.com and company record data from www.glyph.social. These websites contain a nice amount of clean blockchain related data so they are ideal candidates for scraping. I will use the Scrapy Python framework because it provides an easy way to scrape large amounts of data in a clean and comprehensible manner. The data will be stored in a MongoDB database because of its relatively effortless intergration with Scrapy. It is also a NoSQL database which is ideal for unstructured data.
 ### Strategy:
 The strategy implemented for extracting data from these websites is as follows:
 - Check the website's robots.txt file for any exposed sitemaps (They are easier to scrape).
@@ -33,3 +33,4 @@ In the project directory:
 - All output is sent to the terminal and stored in the mongoDB database. You can store the yielded items in a json file by adding `-o <file name>.json` at the end of the above commands.
 - A download delay of 3 seconds has been implemented for both scrapers so we don't overwhelm the sites we are scraping.
 - The scrapers were designed on Windows 11 and have not been tested on Linux based systems. However, they were writen with linux systems in mind so they should run fine on them.
+- Minimal data cleansing was needed in this project.
